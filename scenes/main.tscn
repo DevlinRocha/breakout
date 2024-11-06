@@ -1,0 +1,220 @@
+[gd_scene load_steps=11 format=3 uid="uid://b43bk13c1x6iu"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_iq0x6"]
+[ext_resource type="PackedScene" uid="uid://bekikxwomh8qm" path="res://scenes/wall.tscn" id="1_s3cyj"]
+[ext_resource type="PackedScene" uid="uid://bg55b64twl6kn" path="res://scenes/player.tscn" id="2_sivlh"]
+[ext_resource type="PackedScene" uid="uid://cg4vutkqd1ein" path="res://scenes/ball.tscn" id="3_u1f8a"]
+[ext_resource type="PackedScene" uid="uid://ca3cxnbx0psqh" path="res://scenes/killzone.tscn" id="6_8qxbh"]
+[ext_resource type="PackedScene" uid="uid://cujjjmpo7k1bt" path="res://scenes/brick.tscn" id="6_h8tai"]
+[ext_resource type="Texture2D" uid="uid://ccfh0ugns5dsw" path="res://assets/circle.png" id="7_mdu20"]
+[ext_resource type="PackedScene" uid="uid://vyr7eqgux78l" path="res://scenes/pause_menu.tscn" id="8_epl7y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iyg0d"]
+font_size = 128
+
+[sub_resource type="LabelSettings" id="LabelSettings_pt4eb"]
+font_size = 64
+
+[node name="Main" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_iq0x6")
+
+[node name="LeftWall" parent="." instance=ExtResource("1_s3cyj")]
+
+[node name="RightWall" parent="." instance=ExtResource("1_s3cyj")]
+position = Vector2(1152, 0)
+
+[node name="TopWall" parent="." instance=ExtResource("1_s3cyj")]
+position = Vector2(9, -16)
+rotation = 0.0
+scale = Vector2(1.75, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_sivlh")]
+position = Vector2(576, 576)
+
+[node name="Ball" parent="." instance=ExtResource("3_u1f8a")]
+visible = false
+position = Vector2(576, 560)
+
+[node name="Killzone" parent="." instance=ExtResource("6_8qxbh")]
+position = Vector2(0, 648)
+collision_layer = 0
+collision_mask = 2
+
+[node name="Bricks" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="Brick" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(48, 16)
+
+[node name="Brick2" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(118, 16)
+
+[node name="Brick3" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(188, 16)
+
+[node name="Brick4" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(258, 16)
+
+[node name="Brick5" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(328, 16)
+
+[node name="Brick6" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(398, 16)
+
+[node name="Brick7" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(468, 16)
+
+[node name="Brick8" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(538, 16)
+
+[node name="Brick9" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(608, 16)
+
+[node name="Brick10" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(678, 16)
+
+[node name="Brick11" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(748, 16)
+
+[node name="Brick12" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(818, 16)
+
+[node name="Brick13" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(888, 16)
+
+[node name="Brick14" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(958, 16)
+
+[node name="Brick15" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(1028, 16)
+
+[node name="Brick16" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(1098, 16)
+
+[node name="Brick17" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(48, 52)
+
+[node name="Brick18" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(118, 52)
+
+[node name="Brick19" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(188, 52)
+
+[node name="Brick20" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(258, 52)
+
+[node name="Brick21" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(328, 52)
+
+[node name="Brick22" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(398, 52)
+
+[node name="Brick23" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(468, 52)
+
+[node name="Brick24" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(538, 52)
+
+[node name="Brick25" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(608, 52)
+
+[node name="Brick26" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(678, 52)
+
+[node name="Brick27" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(748, 52)
+
+[node name="Brick28" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(818, 52)
+
+[node name="Brick29" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(888, 52)
+
+[node name="Brick30" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(958, 52)
+
+[node name="Brick31" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(1028, 52)
+
+[node name="Brick32" parent="Bricks" instance=ExtResource("6_h8tai")]
+position = Vector2(1098, 52)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GameOver" type="Label" parent="UI"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.5
+offset_top = -172.0
+offset_right = 173.5
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_iyg0d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Score" type="Label" parent="UI/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_pt4eb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="UI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_right = 16.0
+grow_vertical = 0
+
+[node name="LifeCounter" type="VBoxContainer" parent="UI/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="Life" type="TextureRect" parent="UI/PanelContainer/LifeCounter"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+texture = ExtResource("7_mdu20")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Life2" type="TextureRect" parent="UI/PanelContainer/LifeCounter"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+texture = ExtResource("7_mdu20")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Life3" type="TextureRect" parent="UI/PanelContainer/LifeCounter"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+texture = ExtResource("7_mdu20")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("8_epl7y")]
+unique_name_in_owner = true
+visible = false
