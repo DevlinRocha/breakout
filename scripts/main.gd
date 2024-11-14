@@ -8,6 +8,10 @@ extends Node
 @onready var pause_menu: PanelContainer = %PauseMenu
 @onready var game_over_screen: Label = %GameOver
 
+
+var start_timer: SceneTreeTimer
+
+
 func _ready() -> void:
 	load_score()
 	if not killzone.lost_life.is_connected(_on_lost_life):
@@ -18,6 +22,9 @@ func _ready() -> void:
 
 
 func start_game() -> void:
+	if start_timer:
+		start_timer.timeout.disconnect(start_game)
+
 	game_over_screen.visible = false
 	for child in get_children():
 		if child is Ball:
@@ -42,7 +49,8 @@ func _on_lost_life() -> void:
 	if life_counter.get_child_count() <= 0:
 		return game_over()
 
-	get_tree().create_timer(3).timeout.connect(start_game)
+	start_timer = get_tree().create_timer(3, false)
+	start_timer.timeout.connect(start_game)
 
 
 func _on_player_scored() -> void:
@@ -74,6 +82,7 @@ func restart() -> void:
 		var x := 48
 		var y := 16 + (36 * i)
 		var color := COLORS[i]
+
 		for j in 16:
 			var brick := BRICK.instantiate()
 			x = 48 + (70 * j)
